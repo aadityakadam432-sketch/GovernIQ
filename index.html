@@ -1,0 +1,334 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Inkloom AI | Brand Governance</title>
+<style>
+:root{--bg:#f3faf5;--ink:#173b2b;--muted:#668173;--line:#d8e9de;--purple:#16834a;--nav:#103b28}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.5 system-ui,Segoe UI,sans-serif}button,input,textarea,select{font:inherit}button{border:0;border-radius:9px;padding:10px 13px;cursor:pointer;font-weight:650}.primary{background:var(--purple);color:white}.plain{background:white;border:1px solid var(--line);color:var(--ink)}.danger{background:#fff0f2;color:#bd4053}.app{min-height:100vh;display:grid;grid-template-columns:230px 1fr}.side{background:var(--nav);color:white;padding:22px 15px;display:flex;flex-direction:column;gap:25px}.brand{display:flex;gap:10px;align-items:center;padding:0 7px}.logo{background:linear-gradient(135deg,#39c878,#087443);width:38px;height:38px;border-radius:12px;display:grid;place-items:center;font-size:21px}.brand b{font-size:17px}.brand small{display:block;color:#b9d9c5;font-size:11px}.nav{display:grid;gap:6px}.nav button{text-align:left;background:transparent;color:#c8c7dc}.nav button.active,.nav button:hover{background:#1d6844;color:white}.sidefoot{margin-top:auto;color:#b9d9c5;font-size:12px;border-top:1px solid #28543e;padding:16px 7px}.top{height:72px;background:white;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 28px}.top small{color:var(--muted)}.content{padding:26px;max-width:1450px;margin:auto}.page{display:none}.page.active{display:block}.welcome{display:flex;justify-content:space-between;gap:16px;align-items:start;margin-bottom:22px}.welcome h2{font-size:27px;letter-spacing:-.7px;margin:0 0 6px}.welcome p{margin:0;color:var(--muted)}.notice{background:#effaf2;border:1px solid #c7e8d1;color:#245d3c;border-radius:10px;padding:12px 14px;font-size:12px;margin-bottom:18px}.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:13px;margin-bottom:18px}.stat,.panel{background:white;border:1px solid var(--line);border-radius:15px;padding:18px;box-shadow:0 9px 28px #24234d0a}.stat small{color:var(--muted)}.stat strong{display:block;font-size:27px;margin:8px 0}.layout{display:grid;grid-template-columns:1fr 1fr;gap:17px}.panel{margin-bottom:17px}.panel h3{margin:0 0 4px;font-size:16px}.sub{font-size:12px;color:var(--muted);margin:0 0 16px}.field{display:grid;gap:6px;margin-bottom:13px}.field label{font-size:12px;font-weight:750}.field input,.field textarea,.field select{width:100%;border:1px solid #d2e5d9;border-radius:9px;padding:11px;background:white;color:var(--ink)}textarea{min-height:190px;resize:vertical}.row{display:flex;gap:8px;flex-wrap:wrap}.empty{border:1px dashed #c8e2d1;border-radius:11px;text-align:center;color:var(--muted);padding:28px 12px}.finding,.rule{border:1px solid var(--line);border-radius:11px;padding:13px;margin-bottom:10px}.finding h4{margin:0 0 5px}.finding p,.rule small{font-size:12px;color:#5f6077}.quote{background:#f0f8f2;border-left:3px solid #51ad78;padding:9px;margin:9px 0;font-size:12px}.suggest{background:#e9f8ee;padding:10px;border-radius:8px;font-size:12px;color:#235e43}.tag{font-size:10px;text-transform:uppercase;border-radius:6px;padding:4px 7px;background:#e6f6eb;color:#167244;font-weight:800}.high{background:#fff0f2;color:#bd4053}.medium{background:#fff5df;color:#996200}.good{background:#e7faf1;color:#16865b}.rule{display:flex;gap:10px;align-items:start}.rule input{margin-top:5px;accent-color:var(--purple)}.rule div{flex:1}.tablewrap{overflow:auto}table{border-collapse:collapse;width:100%;font-size:12px}th,td{text-align:left;padding:11px 8px;border-bottom:1px solid var(--line)}th{color:var(--muted)}.bar{height:8px;background:#e3eee6;border-radius:8px;overflow:hidden}.bar span{display:block;height:100%;background:linear-gradient(90deg,#16834a,#5bc987)}.modalbg{display:none;position:fixed;inset:0;background:#17172b88;place-items:center;padding:16px}.modalbg.open{display:grid}.modal{background:white;border-radius:15px;padding:22px;width:min(520px,100%)}.modal h3{margin-top:0}.toast{position:fixed;bottom:20px;right:20px;background:#173b2b;color:white;padding:12px 16px;border-radius:10px;opacity:0;transition:.2s}.toast.show{opacity:1}
+@media(max-width:950px){.app{grid-template-columns:190px 1fr}.stats{grid-template-columns:repeat(2,1fr)}.layout{grid-template-columns:1fr}.content{padding:18px}}@media(max-width:620px){.app{display:block}.side{padding:12px;gap:10px}.nav{display:flex;overflow:auto}.nav button{white-space:nowrap;padding:9px}.sidefoot{display:none}.top{padding:13px 16px;height:auto}.content{padding:13px}.welcome{display:block}.welcome .primary{margin-top:12px}.welcome h2{font-size:23px}.panel{padding:14px}}
+.mini{font-size:12px;color:var(--muted)}.factitem{padding:10px;border:1px solid var(--line);border-radius:9px;margin:8px 0;display:flex;justify-content:space-between;gap:10px}.preview{max-width:100%;max-height:260px;object-fit:contain;border:1px solid var(--line);border-radius:10px;margin:8px 0}.field textarea{font-family:inherit}
+
+#approvedPreview img,#visualPreview img{max-width:100%;max-height:220px;object-fit:contain;border:1px solid var(--line);border-radius:10px;margin-top:8px;background:white;padding:6px}.audit-item{border:1px solid var(--line);border-radius:9px;padding:10px;margin:8px 0;font-size:12px}.audit-pass{background:#f0fdf4;border-color:#bbf7d0}.audit-warn{background:#fff8e7;border-color:#f5d78b}.audit-fail{background:#fff0f2;border-color:#fecdd3}.mini{font-size:12px;color:var(--muted)}
+
+.user-profile{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:10px;padding-bottom:10px;border-bottom:1px solid #28543e}.user-profile-left{display:flex;align-items:center;gap:8px;overflow:hidden}.user-avatar{width:34px;height:34px;background:#1e6b45;color:white;border-radius:50%;display:grid;place-items:center;font-weight:700;font-size:13px;flex-shrink:0}.user-info{overflow:hidden}.user-info b{display:block;font-size:13px;color:#ffffff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.user-info small{color:#93c5a6;font-size:11px;display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.edit-profile-btn{background:#1d6844;color:#b9d9c5;font-size:10px;padding:5px 8px;border-radius:6px;cursor:pointer;white-space:nowrap}.edit-profile-btn:hover{background:#258257;color:white}
+</style><script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.8.0/mammoth.browser.min.js"></script></head><body>
+<div class="app"><aside class="side">
+  <div class="brand"><div class="logo">✦</div><div><b>GovernIQ</b><small>Brand governance platform</small></div></div>
+  <nav class="nav"><button class="active" data-page="overview">▦ Dashboard</button><button data-page="review">◈ Content review</button><button data-page="guidelines">☷ Guidelines</button><button data-page="governance">◎ Governance controls</button><button data-page="history">◷ History</button><button data-page="analytics">▥ Insights</button></nav>
+  
+  <div class="sidefoot">
+    <div class="user-profile">
+      <div class="user-profile-left">
+        <div class="user-avatar" id="sidebarAvatar">U</div>
+        <div class="user-info">
+          <b id="sidebarName">Guest User</b>
+          <small id="sidebarRole">Content Creator</small>
+        </div>
+      </div>
+      <button class="edit-profile-btn" onclick="openProfileModal()">Edit</button>
+    </div>
+    ● Brand Governance active<br><br>consistent branding. clear decision.
+  </div>
+</aside>
+<main><header class="top"><div><small id="crumb">Overview</small><div id="pagetitle"><b>Overview</b></div></div><span class="tag">BRAND GOVERNANCE</span></header><div class="content">
+<section class="page active" id="overview"><div class="welcome"><div><h2>Make every message brand ready.</h2><p>Check content against approved rules, understand why something was flagged, and keep a human in charge.</p></div><button class="primary" onclick="go('review')">＋ Review content</button></div><div class="notice"></div><div class="stats"><div class="stat">Items reviewed<strong id="sReviews">0</strong><small>Saved review runs</small></div><div class="stat">Issues found<strong id="sIssues">0</strong><small>Rule matches</small></div><div class="stat">Awaiting decision<strong id="sPending">0</strong><small>Pending review items</small></div><div class="stat">Active guidelines<strong id="sRules">0</strong><small>Enabled rules</small></div></div><div class="layout"><div class="panel"><h3>Start a review</h3><p class="sub">Paste text and run the checker.</p><div class="field"><label>Content title</label><input id="quickTitle" placeholder="e.g. Summer campaign headline"></div><div class="field"><label>Content to review</label><textarea id="quickText" placeholder="Paste an ad, email, caption or landing-page copy..."></textarea></div><div class="row"><button class="primary" onclick="quickReview()">Run brand check →</button><button class="plain" onclick="example()">Load example</button></div></div><div class="panel"><h3>Recent reviews</h3><p class="sub">Latest activity in this browser.</p><div id="recent" class="empty">No reviews yet. Load the example or paste your own content.</div></div></div></section>
+<section class="page" id="review"><div class="welcome"><div><h2>Content review</h2><p>Rule-based checks with explanations and optional corrections.</p></div></div><div class="notice">A flag means “needs checking”, not necessarily “false”. Check evidence before approving content.</div><div class="layout"><div class="panel"><h3>Submit content</h3><p class="sub">First MVP milestone: text checker + report.</p><div class="field"><label>Content title</label><input id="title" placeholder="Give this item a clear name"></div><div class="field"><label>Upload text, PDF, DOCX or image</label><input id="file" type="file" accept=".txt,.pdf,.docx,.png,.jpg,.jpeg,.webp,text/plain,application/pdf,application/vnd.openxmlformats-officedocument.wordprocessingml.document,image/*"><small class="mini">TXT, text-based PDF and DOCX can be extracted. Images can be previewed for a manual brand checklist; automatic image AI/OCR is not connected.</small><div id="imagePreview"></div></div><div class="field"><label>Content text</label><textarea id="content" style="min-height:270px" placeholder="Paste content here..."></textarea><small class="sub">Original text is preserved. Suggestions do not replace it automatically.</small></div><div class="row"><button class="primary" onclick="runReview()">Check against guidelines</button><button class="plain" onclick="clearReview()">Clear</button></div></div><div class="panel"><h3>Findings report</h3><p class="sub" id="findSub">Run a check to see findings.</p><div id="findings" class="empty">Your report will appear here.</div></div></div></section>
+<section class="page" id="guidelines"><div class="welcome"><div><h2>Brand guidelines</h2><p>Manage the rules this demo checks.</p></div><button class="primary" onclick="openModal()">＋ Add guideline</button></div><div class="notice">Starter rules are examples. Replace them with your organisation’s approved wording before real use.</div><div class="panel"><h3>Rule library</h3><p class="sub" id="ruleSub"></p><div id="ruleList"></div><button class="plain" onclick="resetRules()">Reset sample rules</button></div>
+<div class="layout"><div class="panel"><h3>Approved facts & terminology</h3><p class="sub">Add official facts, approved spellings, and terms to avoid. These are checked with simple phrase matching.</p><div class="field"><label>Fact or approved term</label><input id="factText" placeholder="e.g. Product name is Inkloom AI"></div><div class="field"><label>Type</label><select id="factType"><option value="Approved fact">Approved fact</option><option value="Approved term">Approved term</option><option value="Restricted term">Restricted term</option></select></div><div class="field"><label>Source / note (optional)</label><input id="factSource" placeholder="Official brand guide, URL, or note"></div><button class="primary" onclick="addFact()">＋ Add fact / term</button><div id="factList" style="margin-top:12px"></div></div><div class="panel"><h3>Brand tone of voice</h3><p class="sub">Set the tone description used as a reviewer reference. This is not AI tone classification.</p><div class="field"><label>Approved tone</label><textarea id="brandTone" style="min-height:90px" placeholder="e.g. Clear, helpful, confident; avoid exaggerated promises."></textarea></div><button class="primary" onclick="saveTone()">Save brand tone</button><p class="mini" id="toneSaved"></p></div></div></section>
+
+<!-- Governance Page with Working Controls -->
+<section class="page" id="governance">
+<div class="welcome"><div><h2>Governance controls</h2><p>Manage visual references, accessibility checks, role demonstration and AI transparency.</p></div><span class="tag">HUMAN-IN-THE-LOOP</span></div>
+<div class="notice"><b>Prototype disclosure:</b> this single-file version stores data in this browser only. Role selection below is a UI demonstration, not secure access control. Do not upload confidential or sensitive brand materials. Production security requires a server, authentication, server-enforced permissions and protected database storage.</div>
+<div class="layout">
+ <div class="panel"><h3>Visual consistency & approved assets</h3><p class="sub">Add an approved reference image and compare uploaded artwork manually. Browser-only checks do not prove a logo or layout is correct.</p>
+  <div class="field"><label for="approvedAsset">Approved logo / visual reference</label><input id="approvedAsset" type="file" accept="image/png,image/jpeg,image/webp"><div id="approvedPreview"></div></div>
+  <div class="field"><label for="visualAsset">Artwork to inspect</label><input id="visualAsset" type="file" accept="image/png,image/jpeg,image/webp"><div id="visualPreview"></div></div>
+  <div class="field"><label for="expectedColors">Approved brand colours (hex, comma-separated)</label><input id="expectedColors" value="#16a34a, #064e35, #f4faf6" placeholder="#16a34a, #064e35, #ffffff"></div>
+  <div class="field"><label for="assetAlt">Image alternative text (alt text)</label><input id="assetAlt" placeholder="Describe the meaningful content of the image"></div>
+  <div class="row"><button class="primary" onclick="checkVisualAsset()">Run visual checklist</button><button class="plain" onclick="saveApprovedColors()">Save brand colours</button></div>
+  <div id="visualReport" style="margin-top:14px"></div>
+ </div>
+ <div class="panel"><h3>Accessibility quick checks</h3><p class="sub">Checks text-level issues and a manually selected foreground/background colour pair. Not a full WCAG audit.</p>
+  <div class="field"><label for="accessText">Text to inspect</label><textarea id="accessText" placeholder="Paste content or image alt text..." style="min-height:120px"></textarea></div>
+  <div class="field"><label for="fgColor">Text colour</label><input id="fgColor" type="color" value="#173b2b"></div>
+  <div class="field"><label for="bgColor">Background colour</label><input id="bgColor" type="color" value="#ffffff"></div>
+  <button class="primary" onclick="runAccessibilityAudit()">Check accessibility</button><div id="accessReport" style="margin-top:14px"></div>
+ </div>
+</div>
+<div class="layout">
+ <div class="panel"><h3>Role & permission preview</h3><p class="sub">Preview how each role should use the product. This selector is not authentication and does not protect data.</p>
+  <div class="field"><label for="rolePreview">Preview role</label><select id="rolePreview" onchange="renderRolePreview()"><option value="creator">Creator</option><option value="manager">Manager</option><option value="reviewer">Authorised reviewer</option></select></div>
+  <div id="roleReport" class="notice"></div>
+  <p class="mini">Production requirement: assign roles on the server after login; never trust a role chosen in browser JavaScript.</p>
+ </div>
+ <div class="panel"><h3>AI & external service disclosure</h3><p class="sub">The current checker runs locally using phrase rules. It does not call an AI model or send content to an external AI provider.</p>
+  <div class="rule"><span class="tag good">LOCAL</span><div><b>Rule-based text checks</b><br><small>Checks configured phrases and approved/restricted terms. Results are explainable but not proof that a claim is true or false.</small></div></div>
+  <div class="rule"><span class="tag medium">MANUAL</span><div><b>Visual inspection</b><br><small>Image previews and checklist prompts only; no automatic image recognition or logo matching is claimed.</small></div></div>
+  <div class="rule"><span class="tag medium">NOT CONNECTED</span><div><b>External AI services</b><br><small>No external AI service is connected in this prototype. If one is added later, disclose provider, purpose, retention and what content is transmitted.</small></div></div>
+  <label style="display:flex;gap:8px;align-items:start;margin-top:12px"><input type="checkbox" id="humanReviewAck"><span>I understand automated findings are suggestions and final approval remains with an authorised human reviewer.</span></label>
+ </div>
+</div>
+</section>
+
+<section class="page" id="history"><div class="welcome"><div><h2>Review history</h2><p>Review runs and decisions saved in this browser.</p></div><button class="plain" onclick="exportData()">Export JSON</button></div><div class="panel"><div class="welcome"><div><h3>All review items</h3><p class="sub">Decision changes are stored locally.</p></div><button class="danger" onclick="clearHistory()">Clear history</button></div><div id="historyTable"></div></div></section>
+<section class="page" id="analytics"><div class="welcome"><div><h2>Governance insights</h2><p>Local metrics for findings and review outcomes.</p></div><button class="plain" onclick="exportData()">Export data</button></div><div class="stats"><div class="stat">Approved<strong id="aApproved">0</strong><small>Approved items</small></div><div class="stat">Needs revision<strong id="aChanges">0</strong><small>Items returned for edits</small></div><div class="stat">Rejected<strong id="aRejected">0</strong><small>Rejected items</small></div><div class="stat">No matches<strong id="aClean">0</strong><small>Zero rule matches</small></div></div><div class="layout"><div class="panel"><h3>Most flagged categories</h3><p class="sub">Across saved reviews.</p><div id="categories"></div></div><div class="panel"><h3>How to interpret metrics</h3><p class="sub">Metrics count local rule matches only. They do not prove that a flagged statement is false or that an unflagged statement is accurate. A production version should measure precision, recall, false positives and reviewer agreement on a labelled test set.</p></div></div></section>
+</div></main></div>
+
+<!-- Profile Edit Modal -->
+<div class="modalbg" id="profileModalBg">
+  <div class="modal">
+    <h3>User Profile Settings</h3>
+    <p class="sub">Enter your details to customize your session profile.</p>
+    <div class="field">
+      <label>Your Name</label>
+      <input id="inputUserName" placeholder="e.g. John Doe">
+    </div>
+    <div class="field">
+      <label>Your Role / Title</label>
+      <input id="inputUserRole" placeholder="e.g. Brand Manager">
+    </div>
+    <div class="row" style="justify-content:end">
+      <button class="plain" onclick="closeProfileModal()">Cancel</button>
+      <button class="primary" onclick="saveUserProfile()">Save Profile</button>
+    </div>
+  </div>
+</div>
+
+<div class="modalbg" id="modalbg"><div class="modal"><h3 id="modalHeading">Add guideline</h3><p class="sub">Phrase-based rule with a reason and optional suggestion.</p><div class="field"><label>Guideline name</label><input id="rName" placeholder="Avoid guaranteed outcomes"></div><div class="field"><label>Category</label><select id="rCategory"><option>Claims & evidence</option><option>Prohibited language</option><option>Approved terminology</option><option>Tone of voice</option><option>Required wording</option></select></div><div class="field"><label>Phrase or keyword to flag</label><input id="rPhrase" placeholder="guaranteed success"></div><div class="field"><label>Why this matters</label><textarea id="rReason" style="min-height:75px"></textarea></div><div class="field"><label>Suggested correction (optional)</label><input id="rSuggestion"></div><div class="row" style="justify-content:end"><button class="plain" onclick="closeModal()">Cancel</button><button class="primary" onclick="saveRule()">Save guideline</button></div></div></div><div class="toast" id="toast"></div>
+
+<script>
+const seed=[
+{id:"r1",name:"Unsupported guarantee claims",category:"Claims & evidence",phrase:"guarantees 100% success",reason:"Promotional guarantees should be supported by approved evidence. No evidence is attached to this text review.",suggestion:"is designed to help teams improve their workflow",severity:"high",active:true},
+{id:"r2",name:"Absolute success claims",category:"Claims & evidence",phrase:"100% success",reason:"An absolute outcome claim may be misleading if approved evidence does not substantiate it.",suggestion:"measurable progress toward your goals",severity:"high",active:true},
+{id:"r3",name:"Avoid “best ever” language",category:"Prohibited language",phrase:"best ever",reason:"Superlative wording should only be used when permitted by brand guidelines and backed by evidence.",suggestion:"a helpful option for your team",severity:"medium",active:true},
+{id:"r4",name:"Avoid fake urgency",category:"Prohibited language",phrase:"act now or miss out",reason:"Urgency language may be misleading unless the deadline or limitation is real and approved.",suggestion:"Explore the details to see if it fits your needs",severity:"medium",active:true},
+{id:"r5",name:"Approved product spelling",category:"Approved terminology",phrase:"ink loom",reason:"The product name is written inconsistently. Use the approved spelling “Inkloom AI”.",suggestion:"Inkloom AI",severity:"low",active:true},
+{id:"r6",name:"Placeholder disclaimer",category:"Required wording",phrase:"[add disclaimer]",reason:"This placeholder indicates that approved disclaimer wording may be missing.",suggestion:"Insert the exact approved disclaimer",severity:"medium",active:true}];
+const get=(k,d)=>{try{return JSON.parse(localStorage.getItem(k))??structuredClone(d)}catch{return structuredClone(d)}};
+let rules=get("inkloom_rules_v1",seed),reviews=get("inkloom_reviews_v1",[]),facts=get("inkloom_facts_v1",[]),brandTone=localStorage.getItem("inkloom_tone_v1")||"",editId=null;
+
+// User Profile Setup
+let currentUser=get("inkloom_user_profile_v1",{name:"Guest User",role:"Content Creator"});
+function updateProfileUI(){
+  document.getElementById("sidebarName").textContent=currentUser.name;
+  document.getElementById("sidebarRole").textContent=currentUser.role;
+  let initials = currentUser.name.split(" ").map(n=>n[0]).join("").toUpperCase().slice(0,2) || "U";
+  document.getElementById("sidebarAvatar").textContent=initials;
+}
+function openProfileModal(){
+  document.getElementById("inputUserName").value=currentUser.name;
+  document.getElementById("inputUserRole").value=currentUser.role;
+  document.getElementById("profileModalBg").classList.add("open");
+}
+function closeProfileModal(){
+  document.getElementById("profileModalBg").classList.remove("open");
+}
+function saveUserProfile(){
+  let name = document.getElementById("inputUserName").value.trim();
+  let role = document.getElementById("inputUserRole").value.trim();
+  if(!name) return toast("Please enter a name");
+  currentUser = {name: name, role: role || "Contributor"};
+  localStorage.setItem("inkloom_user_profile_v1", JSON.stringify(currentUser));
+  updateProfileUI();
+  closeProfileModal();
+  toast("Profile updated successfully!");
+}
+updateProfileUI();
+
+const save=()=>{localStorage.setItem("inkloom_rules_v1",JSON.stringify(rules));localStorage.setItem("inkloom_reviews_v1",JSON.stringify(reviews));localStorage.setItem("inkloom_facts_v1",JSON.stringify(facts));render()};
+const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+function toast(s){let e=document.getElementById("toast");e.textContent=s;e.classList.add("show");setTimeout(()=>e.classList.remove("show"),2200)}
+
+function render(){
+  document.getElementById("sReviews").textContent = reviews.length;
+  document.getElementById("sIssues").textContent = reviews.reduce((acc, r)=>acc + (r.findings?r.findings.length:0), 0);
+  document.getElementById("sPending").textContent = reviews.filter(r=>r.decision==="Pending").length;
+  document.getElementById("sRules").textContent = rules.filter(r=>r.active).length;
+
+  let recentEl = document.getElementById("recent");
+  if(!reviews.length){
+    recentEl.className="empty";
+    recentEl.innerHTML="No reviews yet. Load the example or paste your own content.";
+  } else {
+    recentEl.className="";
+    recentEl.innerHTML = reviews.slice(0,4).map(r=>`
+      <div style="padding:10px; border-bottom:1px solid var(--line); display:flex; justify-content:space-between; align-items:center;">
+        <div><b>${esc(r.title)}</b><br><small class="mini">${new Date(r.createdAt).toLocaleDateString()}</small></div>
+        <span class="tag ${r.decision==='Approved'?'good':(r.decision==='Rejected'?'high':'medium')}">${esc(r.decision)}</span>
+      </div>
+    `).join("");
+  }
+}
+
+function go(p){
+  document.querySelectorAll(".page").forEach(x=>x.classList.toggle("active",x.id===p));
+  document.querySelectorAll(".nav button").forEach(x=>x.classList.toggle("active",x.dataset.page===p));
+  let n={overview:"Overview",review:"Content review",guidelines:"Brand guidelines",governance:"Governance controls",history:"Review history",analytics:"Analytics"};
+  document.getElementById("crumb").textContent=n[p];
+  document.getElementById("pagetitle").innerHTML="<b>"+n[p]+"</b>";
+  if(p==="review"&&lastReview)showFindings(lastReview);
+  if(p==="governance")renderRolePreview();
+  window.scrollTo(0,0);
+}
+document.querySelectorAll(".nav button").forEach(b=>b.onclick=()=>go(b.dataset.page));
+
+function example(){quickTitle.value="Summer campaign headline";quickText.value="Inkloom AI guarantees 100% success for every team. It is the best ever tool — act now or miss out!";toast("Example loaded")}
+function quickReview(){if(!quickText.value.trim())return toast("Add some text first");document.getElementById("title").value=document.getElementById("quickTitle").value;document.getElementById("content").value=document.getElementById("quickText").value;go("review");runReview()}
+let lastReview=null;
+
+function check(text){
+  let low=text.toLowerCase();
+  let found=rules.filter(r=>r.active&&r.phrase&&low.includes(r.phrase.toLowerCase())).map(r=>({ruleId:r.id,title:r.name,category:r.category,severity:r.severity,excerpt:snippet(text,r.phrase),reason:r.reason,suggestion:r.suggestion,source:"Guideline: "+r.name,status:"Open"}));
+  facts.filter(f=>f.type==="Restricted term"&&f.text&&low.includes(f.text.toLowerCase())).forEach(f=>found.push({ruleId:f.id,title:"Restricted term detected",category:"Restricted terminology",severity:"high",excerpt:snippet(text,f.text),reason:"This term is listed as restricted in the brand knowledge section.",suggestion:"Replace or remove this term according to the approved brand wording.",source:"Brand library: "+(f.source||f.type),status:"Open"}));
+  
+  const claims=[/\bguarantee(?:s|d)?\b/i,/\b100\s*%\s*(?:success|effective|safe|accurate)\b/i,/\b(?:clinically proven|number one|no\.?\s*1|best in the world)\b/i,/\b(?:cures?|zero risk|risk-free)\b/i,/\b\d+(?:\.\d+)?\s*%\s*(?:increase|improvement|reduction|more|less)\b/i];
+  claims.forEach(rx=>{
+    let m=text.match(rx);
+    if(m&&!found.some(f=>f.excerpt&&f.excerpt.toLowerCase()===m[0].toLowerCase()))found.push({title:"Promotional claim needs evidence",category:"Claims & evidence",severity:"high",excerpt:snippet(text,m[0]),reason:"This wording may imply an absolute or measurable outcome. Verify evidence.",suggestion:"Attach approved evidence or rewrite claim.",source:"Claim verification prompt",status:"Needs review"});
+  });
+  return found;
+}
+function snippet(t,p){let i=t.toLowerCase().indexOf(p.toLowerCase());return t.slice(Math.max(0,i-45),Math.min(t.length,i+p.length+65))}
+
+function runReview(){
+  let txt=document.getElementById("content").value.trim();
+  let file=document.getElementById("file").files[0];
+  if(!txt&&file&&file.type.startsWith("image/")){txt="[Image asset submitted: "+file.name+"]"}
+  if(!txt)return toast("Paste text or upload a supported file first");
+  let r={id:"rev"+Date.now(),title:document.getElementById("title").value.trim()||"Untitled review",content:txt,createdAt:new Date().toISOString(),findings:check(txt),decision:"Pending",comment:"",fileName:file?.name||"",fileType:file?.type||""};
+  reviews.unshift(r);
+  lastReview=r;
+  save();
+  showFindings(r);
+  toast("Review complete: "+r.findings.length+" finding(s)");
+}
+
+function showFindings(r){
+  findSub.textContent=r.title+" · "+new Date(r.createdAt).toLocaleString();
+  let root=document.getElementById("findings");
+  if(!r.findings.length){
+    root.className="empty";
+    root.innerHTML='<div style="font-size:27px">✓</div><b>No active rule matches found</b><p>Human review is still recommended.</p>'+decisionButtons(r.id);
+    return;
+  }
+  root.className="";
+  root.innerHTML=r.findings.map((f,i)=>'<article class="finding"><div style="display:flex;justify-content:space-between;gap:8px"><div><h4>'+esc(f.title)+'</h4><small>'+esc(f.category)+'</small></div><span class="tag '+esc(f.severity)+'">'+esc(f.severity)+'</span></div><div class="quote">“'+esc(f.excerpt)+'”</div><p><b>Why flagged:</b> '+esc(f.reason)+'</p><p><b>Source:</b> '+esc(f.source)+'</p>'+(f.suggestion?'<div class="suggest"><b>Suggested correction</b><br>'+esc(f.suggestion)+'</div>':'')+'</article>').join("")+'<div class="field"><label>Reviewer comment</label><textarea id="comment" style="min-height:70px" placeholder="Approval notes...">'+esc(r.comment||"")+'</textarea></div>'+decisionButtons(r.id);
+}
+function decisionButtons(id){return '<div class="row" style="margin-top:12px"><button class="primary" onclick="decision(\''+id+'\',\'Approved\')">Approve</button><button class="plain" onclick="decision(\''+id+'\',\'Needs revision\')">Needs revision</button><button class="danger" onclick="decision(\''+id+'\',\'Rejected\')">Reject</button></div>'}
+function decision(id,d){let r=reviews.find(x=>x.id===id);if(!r)return;r.decision=d;r.comment=document.getElementById("comment")?.value||r.comment;save();showFindings(r);toast("Decision saved: "+d)}
+
+// Image Previews in Governance Control
+document.getElementById("approvedAsset").onchange=e=>{
+  let f=e.target.files[0];
+  if(f){
+    document.getElementById("approvedPreview").innerHTML=`<img src="${URL.createObjectURL(f)}" id="imgApproved">`;
+    toast("Approved reference asset loaded");
+  }
+};
+document.getElementById("visualAsset").onchange=e=>{
+  let f=e.target.files[0];
+  if(f){
+    document.getElementById("visualPreview").innerHTML=`<img src="${URL.createObjectURL(f)}" id="imgVisual">`;
+    toast("Artwork asset loaded");
+  }
+};
+
+// Governance Logic: Visual Consistency Check
+function checkVisualAsset(){
+  let report = document.getElementById("visualReport");
+  let appImg = document.getElementById("imgApproved");
+  let visImg = document.getElementById("imgVisual");
+  let altText = document.getElementById("assetAlt").value.trim();
+  let colors = document.getElementById("expectedColors").value.trim();
+
+  let html = [];
+  if(appImg && visImg){
+    html.push(`<div class="audit-item audit-pass">✓ Reference asset & artwork image loaded for manual visual inspection.</div>`);
+  } else {
+    html.push(`<div class="audit-item audit-warn">⚠ Please upload both reference image and artwork to compare visual assets.</div>`);
+  }
+
+  if(altText){
+    html.push(`<div class="audit-item audit-pass">✓ Alt Text provided: "${esc(altText)}"</div>`);
+  } else {
+    html.push(`<div class="audit-item audit-fail">✕ Missing Alt Text: Accessibility guidelines require image description.</div>`);
+  }
+
+  if(colors){
+    html.push(`<div class="audit-item audit-pass">✓ Approved brand palette registered: ${esc(colors)}</div>`);
+  } else {
+    html.push(`<div class="audit-item audit-warn">⚠ No brand colors entered for color audit.</div>`);
+  }
+
+  report.innerHTML = html.join("");
+  toast("Visual checklist completed");
+}
+
+function saveApprovedColors(){
+  let c = document.getElementById("expectedColors").value.trim();
+  localStorage.setItem("inkloom_colors_v1", c);
+  toast("Brand colours saved");
+}
+
+// Governance Logic: Accessibility Audit & Luminance Ratio
+function hexToRgb(hex) {
+  let c = hex.replace("#","");
+  if(c.length === 3) c = c.split("").map(x=>x+x).join("");
+  let num = parseInt(c, 16);
+  return [num >> 16, (num >> 8) & 255, num & 255];
+}
+function getLuminance(rgb) {
+  let a = rgb.map(v => {
+    v /= 255;
+    return v <= 0.03928 ? v / 12.92 : Math.pow((v + 0.055) / 1.055, 2.4);
+  });
+  return a[0] * 0.2126 + a[1] * 0.7152 + a[2] * 0.0722;
+}
+function getContrast(hex1, hex2) {
+  let lum1 = getLuminance(hexToRgb(hex1));
+  let lum2 = getLuminance(hexToRgb(hex2));
+  let brightest = Math.max(lum1, lum2);
+  let darkest = Math.min(lum1, lum2);
+  return (brightest + 0.05) / (darkest + 0.05);
+}
+
+function runAccessibilityAudit(){
+  let text = document.getElementById("accessText").value.trim();
+  let fg = document.getElementById("fgColor").value;
+  let bg = document.getElementById("bgColor").value;
+  let report = document.getElementById("accessReport");
+
+  let ratio = getContrast(fg, bg).toFixed(2);
+  let passesAA = ratio >= 4.5;
+  
+  let html = [];
+  html.push(`<div class="audit-item ${passesAA ? 'audit-pass' : 'audit-fail'}">
+    <b>Color Contrast Ratio: ${ratio}:1</b> — ${passesAA ? 'Passes WCAG AA Normal Text Standard (≥ 4.5:1)' : 'Fails WCAG AA Standard (< 4.5:1)'}
+  </div>`);
+
+  if(!text){
+    html.push(`<div class="audit-item audit-warn">⚠ No text entered for legibility / length checks.</div>`);
+  } else {
+    if(text.length > 200){
+      html.push(`<div class="audit-item audit-warn">⚠ Long text block detected (${text.length} chars). Consider breaking into smaller paragraphs for readability.</div>`);
+    } else {
+      html.push(`<div class="audit-item audit-pass">✓ Text length is concise and easy to read.</div>`);
+    }
+  }
+
+  report.innerHTML = html.join("");
+  toast("Accessibility audit finished");
+}
+
+// Governance Logic: Role Preview Renderer
+function renderRolePreview(){
+  let role = document.getElementById("rolePreview").value;
+  let box = document.getElementById("roleReport");
+  let roles = {
+    creator: "<b>Role: Creator</b><br>Can submit new content, view suggestions, and fix flagged guidelines.",
+    manager: "<b>Role: Manager</b><br>Can edit guidelines, set brand tone of voice, manage rules, and view analytics.",
+    reviewer: "<b>Role: Authorised Reviewer</b><br>Has final approval authority (Approve, Needs Revision, Reject) for governance compliance."
+  };
+  box.innerHTML = roles[role] || "";
+}
+
+render();
+</script></body></html>
